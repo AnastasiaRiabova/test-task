@@ -1,0 +1,32 @@
+@import '~normalize.css';
+@import "utils/styles/reset.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    height: 100vh;
+    overflow: auto;
+    width: 100%;
+    max-width: 1440px;
+
+}
+
+.homeContainer {
+    background: url("assets/images/pexels-nubia-navarro-(nubikini)-386010.jpg") no-repeat center;
+    background-size: cover;
+}

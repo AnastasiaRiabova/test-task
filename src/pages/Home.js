@@ -1,5 +1,3 @@
-import classnames from 'classnames';
-
 export const Home = () => {
   return (
     <section

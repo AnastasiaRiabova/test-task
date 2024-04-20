@@ -3,8 +3,8 @@ import { map_pin, star, heart } from '../assets/icons';
 import { Tag } from './Tag';
 import { Button } from './Button';
 import { Icon } from './Icon';
-// import { Modal } from '../Modal/Modal';
 import { calculateTags } from '../utils/functions/functions';
+import { Modal } from './Modal';
 
 export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
   const [show, setShow] = useState(4);
@@ -106,14 +106,14 @@ export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
       {/*    </Button>*/}
       {/*  </div>*/}
       {/*)}*/}
-      {/*{!!isOpenId && (*/}
-      {/*  <Modal*/}
-      {/*    isOpen={!!isOpenId}*/}
-      {/*    closeModal={() => setIsOpenId(null)}*/}
-      {/*    calculateTags={calculateTags}*/}
-      {/*    data={campers.find(elem => elem._id === isOpenId)}*/}
-      {/*  />*/}
-      {/*)}*/}
+      {!!isOpenId && (
+        <Modal
+          isOpen={!!isOpenId}
+          closeModal={() => setIsOpenId(null)}
+          calculateTags={calculateTags}
+          data={campers.find(elem => elem._id === isOpenId)}
+        />
+      )}
     </>
   );
 };

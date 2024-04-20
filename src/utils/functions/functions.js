@@ -19,3 +19,34 @@ export const calculateTags = object => {
     value: value,
   }));
 };
+
+export const validateIfValueHasLength = value => {
+  if (value.length <= 0) {
+    return {
+      error: value.length <= 0,
+      message: 'Can not be empty',
+    };
+  }
+};
+
+export const validateEmail = email => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regex.test(email)) {
+    return {
+      error: regex.test(email),
+      message:
+        'Please enter a valid email address. For example "johndoe@domain.com" ',
+    };
+  }
+};
+
+export const isDateNotInPast = dateString => {
+  const inputDate = new Date(dateString);
+  const today = new Date();
+  if (!(inputDate >= today)) {
+    return {
+      error: inputDate >= today,
+      message: 'Please enter a valid date',
+    };
+  }
+};

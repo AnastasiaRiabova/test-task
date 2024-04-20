@@ -1,18 +1,64 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useLocalStorage } from '@mantine/hooks';
+import { useSearchParams } from 'react-router-dom';
 import { map_pin, star, heart } from '../assets/icons';
 import { Tag } from './Tag';
 import { Button } from './Button';
 import { Icon } from './Icon';
-import { calculateTags } from '../utils/functions/functions';
+import {
+  calculateTags,
+  filterCampers,
+  searchParamsToObject,
+} from '../utils/functions/functions';
 import { Modal } from './Modal';
 
 export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
   const [show, setShow] = useState(4);
   const [isOpenId, setIsOpenId] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const filters = useMemo(
+    () => searchParamsToObject(new URLSearchParams(searchParams)),
+    [searchParams]
+  );
+  const isFiltered = useMemo(() => {
+    return Object.keys(filters).length !== 0;
+  }, [filters]);
+  const filteredCampers = useMemo(() => {
+    return isFiltered ? filterCampers(campers, filters) : campers;
+  }, [filters, campers]);
+
+  const showCampers = useMemo(() => {
+    return filteredCampers.slice(0, show);
+  }, [filteredCampers, show]);
+  const handleShowMore = () => {
+    setShow(show + 4);
+  };
+
+  useEffect(() => {
+    setShow(4);
+  }, [filteredCampers]);
+
+  const [value, setValue] = useLocalStorage({
+    key: 'favorites',
+    defaultValue: [],
+  });
+
+  if (emptyComponent && showCampers.length === 0) {
+    return emptyComponent;
+  }
+
+  if (showCampers.length === 0 && !isLoading && isFiltered) {
+    return (
+      <div className="flex items-center justify-center w-full h-[80vh] flex-col ">
+        <p className="font-bold pb-4">No campers found</p>
+        <Button onClick={() => setSearchParams({})}>Reset filters</Button>
+      </div>
+    );
+  }
 
   return (
     <>
-      {campers?.map(camper => {
+      {showCampers?.map(camper => {
         const camperTags = calculateTags({
           adults: camper.adults,
           transmission: camper.transmission,
@@ -21,7 +67,7 @@ export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
         });
         return (
           <div
-            className={'border rounded-lg border-gray-300 p-3 m-3'}
+            className={'border rounded-lg border-grey-lightGrey p-3 m-3'}
             key={camper._id}
           >
             <div className={'flex gap-2'}>
@@ -40,18 +86,18 @@ export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
                       {'€' + camper.price.toFixed(2)}
                     </span>
                     <span
-                    // onClick={() =>
-                    //   setValue(
-                    //     value.includes(camper._id)
-                    //       ? value.filter(item => item !== camper._id)
-                    //       : [...value, camper._id]
-                    //   )
-                    // }
+                      onClick={() =>
+                        setValue(
+                          value.includes(camper._id)
+                            ? value.filter(item => item !== camper._id)
+                            : [...value, camper._id]
+                        )
+                      }
                     >
-                      {/*<Icon*/}
-                      {/*  icon={heart}*/}
-                      {/*  fill={value.includes(camper._id) ? 'red' : 'none'}*/}
-                      {/*/>*/}
+                      <Icon
+                        icon={heart}
+                        fill={value.includes(camper._id) ? 'red' : 'none'}
+                      />
                     </span>
                   </div>
                 </div>
@@ -99,13 +145,13 @@ export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
           </div>
         );
       })}
-      {/*{show < filteredCampers.length && (*/}
-      {/*  <div className="flex justify-center p-3">*/}
-      {/*    <Button onClick={handleShowMore} variant="secondary">*/}
-      {/*      Load more*/}
-      {/*    </Button>*/}
-      {/*  </div>*/}
-      {/*)}*/}
+      {show < filteredCampers.length && (
+        <div className="flex justify-center p-3">
+          <Button onClick={handleShowMore} variant="secondary">
+            Load more
+          </Button>
+        </div>
+      )}
       {!!isOpenId && (
         <Modal
           isOpen={!!isOpenId}

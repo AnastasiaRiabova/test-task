@@ -10,7 +10,7 @@ export const Tag = ({
 }) => {
   return (
     <div
-      className={`rounded-[30px] py-1 px-4 bg-customGrey-lightGrey text-customDark flex items-center justify-center gap-2 ${className}`}
+      className={`rounded-[30px] py-1 px-4 bg-grey-lightGrey text-dark flex items-center justify-center gap-2 ${className}`}
       onClick={onClick}
       {...rest}
     >

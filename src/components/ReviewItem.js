@@ -15,7 +15,7 @@ export const ReviewItem = ({ name, rating, comment }) => {
       <div className={'flex gap-2 mb-3'}>
         <div
           className={
-            'bg-customGrey-lightGrey rounded-full w-[40px] h-[40px] p-2 flex items-center justify-center font-bold text-lg text-customRed'
+            'bg-grey-lightGrey rounded-full w-[40px] h-[40px] p-2 flex items-center justify-center font-bold text-lg text-red'
           }
         >
           {name.slice(0, 1)}

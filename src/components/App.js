@@ -6,9 +6,9 @@ import { Catalog } from '../pages/Catalog';
 import { Favorites } from '../pages/Favorites';
 export const App = () => {
   return (
-    <main className={''}>
+    <main>
       <Header />
-      <div className={'container'}>
+      <div className={'baseContainer'}>
         <Routes>
           <Route path={'/'} element={<Home />} />
           <Route path={'/catalog'} element={<Catalog />} />

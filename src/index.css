@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+        font-family: 'Inter';
+        src: url('./assets/fonts/Inter/Inter-Regular.ttf') format('truetype'),
+        url('./assets/fonts/Inter/Inter-Medium.ttf') format('truetype'),
+        url('./assets/fonts/Inter/Inter-SemiBold.ttf') format('truetype'),
+        url('./assets/fonts/Inter/Inter-Bold.ttf') format('truetype'),
+        url('./assets/fonts/Inter/Inter-Black.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
 body {
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -18,12 +32,10 @@ body {
     justify-content: space-between;
 }
 
-.container {
+.baseContainer {
     height: 100vh;
     overflow: auto;
-    width: 100%;
-    max-width: 1440px;
-
+    width: 100% !important;
 }
 
 .homeContainer {

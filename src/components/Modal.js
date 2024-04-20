@@ -35,7 +35,7 @@ export const Modal = ({ isOpen, closeModal, data, calculateTags }) => {
               <Dialog.Panel className="w-full max-w-6xl transform rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg font-medium leading-6 text-customDark mb-2"
+                  className="text-lg font-medium leading-6 text-dark mb-2"
                 >
                   <div className={'flex items-center gap-2 justify-between'}>
                     <h5 className={'font-bold'}>{data?.name}</h5>
@@ -60,7 +60,7 @@ export const Modal = ({ isOpen, closeModal, data, calculateTags }) => {
                   <div>{data.location}</div>
                 </div>
                 <div className="h-[80vh] overflow-auto pr-2">
-                  <div className="text-sm text-customGrey-text flex flex-col gap-3">
+                  <div className="text-sm text-grey-text flex flex-col gap-3">
                     <div className={'flex flex-wrap gap-3'}>
                       {data.gallery.map(foto => (
                         <div key={foto}>
@@ -74,9 +74,7 @@ export const Modal = ({ isOpen, closeModal, data, calculateTags }) => {
                         </div>
                       ))}
                     </div>
-                    <div className={'text-customGrey-text'}>
-                      {data.description}
-                    </div>
+                    <div className={'text-grey-text'}>{data.description}</div>
                     <Tabs calculateTags={calculateTags} data={data} />
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-import { fullObjectProperties } from './variables';
+import { filterMap, fullObjectProperties, typeMap } from './variables';
 
 export const searchParamsToObject = searchParams => {
   const params = {};
@@ -49,4 +49,32 @@ export const isDateNotInPast = dateString => {
       message: 'Please enter a valid date',
     };
   }
+};
+
+export const filterCampers = (campers, filters) => {
+  return campers.filter(camper => {
+    if (
+      filters?.location &&
+      !camper?.location.toLowerCase().includes(filters?.location.toLowerCase())
+    ) {
+      return false;
+    }
+
+    if (filters?.type && camper.form !== typeMap[filters?.type]) {
+      return false;
+    }
+    const campersFilterValue =
+      camper.transmission === 'automatic'
+        ? { ...camper.details, automatic: 'automatic' }
+        : camper.details;
+    for (let key in filters) {
+      if (key === 'type' || key === 'location') {
+        continue;
+      }
+      if (key !== 'type' && !campersFilterValue[filterMap[key] || key]) {
+        return false;
+      }
+    }
+    return true;
+  });
 };

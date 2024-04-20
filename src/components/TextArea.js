@@ -29,7 +29,7 @@ export const TextArea = ({
         name={name}
         id={id}
         className={classnames(
-          'p-2 rounded-[10px] bg-customGrey-lightGreyInput text-customDark',
+          'p-2 rounded-[10px] bg-grey-lightGrey text-dark',
           {
             ['pl-8']: icon,
           },

@@ -21,7 +21,7 @@ export const Tabs = ({ calculateTags, data }) => {
   return (
     <div className="w-full">
       <Tab.Group>
-        <Tab.List className="flex gap-6 text-customDark font-bold text-lg mb-3">
+        <Tab.List className="flex gap-6 text-dark font-bold text-lg mb-3">
           {Object.keys(tabs).map(name => (
             <Tab
               key={name}
@@ -29,7 +29,7 @@ export const Tabs = ({ calculateTags, data }) => {
                 classNames(
                   'relative',
                   selected
-                    ? ' after:border-b-4 after:border-customRed after:absolute after:-bottom-3 after:right-0 after:left-0 '
+                    ? ' after:border-b-4 after:border-red after:absolute after:-bottom-3 after:right-0 after:left-0 '
                     : ''
                 )
               }
@@ -38,11 +38,7 @@ export const Tabs = ({ calculateTags, data }) => {
             </Tab>
           ))}
         </Tab.List>
-        <div
-          className={
-            'border-b border-customGrey-lightGreyTextPlaceholder w-full'
-          }
-        ></div>
+        <div className={'border-b border-grey-lightGrey w-full'}></div>
         <Tab.Panels className="mt-4">
           {Object.values(tabs).map((item, idx) => (
             <Tab.Panel key={idx}>
@@ -67,19 +63,15 @@ export const Tabs = ({ calculateTags, data }) => {
                         )}
                       </ul>
                       <div className={'my-6'}>
-                        <p
-                          className={'font-bold text-lg mb-3 text-customDark '}
-                        >
+                        <p className={'font-bold text-lg mb-3 text-dark '}>
                           Vehicle details
                         </p>
                         <div
                           className={
-                            "border-b border-customGrey-lightGreyTextPlaceholder w-full my-2'"
+                            "border-b border-grey-lightGrey w-full my-2'"
                           }
                         ></div>
-                        <div
-                          className={'my-3 flex flex-col gap-3 text-customDark'}
-                        >
+                        <div className={'my-3 flex flex-col gap-3 text-dark'}>
                           <div className={'flex justify-between'}>
                             <span>Form</span>{' '}
                             <span className={'capitalize'}>{data.form}</span>

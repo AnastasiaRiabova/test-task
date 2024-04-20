@@ -20,7 +20,6 @@ module.exports = {
           text: '#475467',
           lightGrey: '#f2f4f7',
           lightGreyInput: '#f7f7f7',
-          lightGreyTextForm: 'rgba(229, 231, 235, 0.6)',
           lightGreyTextPlaceholder: 'rgba(229, 231, 235, 0.8)',
         },
       },

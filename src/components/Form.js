@@ -48,52 +48,52 @@ export const Form = () => {
   };
 
   return (
-    <div className={'border rounded-md p-3 text-customDark'}>
+    <div className={'border border-grey-lightGrey rounded-md p-3 text-dark'}>
       <h5 className={'font-bold text-lg mb-1'}>Book your campervan now</h5>
       <p className={'mb-3'}>Stay connected! We are always ready to help you.</p>
       <form onSubmit={handleSubmit} className={'flex flex-col gap-3'}>
         <Input
           id="name"
-          error={errors.name}
-          placeholder="Name"
-          value={formFields.name}
-          className={'p-4'}
           onChange={e => {
             setErrors({ ...errors, name: '' });
             handleChange({ ...formFields, name: e });
           }}
+          error={errors.name}
+          placeholder="Name"
+          value={formFields.name}
+          className={'p-4'}
         />
         <Input
           id="email"
-          error={errors.email}
-          placeholder="Email"
-          value={formFields.email}
-          className={'p-4'}
           onChange={e => {
             setErrors({ ...errors, email: '' });
             handleChange({ ...formFields, email: e });
           }}
+          error={errors.email}
+          placeholder="Email"
+          value={formFields.email}
+          className={'p-4'}
         />
         <Input
           id="date"
-          error={errors.date}
-          placeholder="Booking date"
-          value={formFields.date}
-          className={'p-4'}
           onChange={e => {
             setErrors({ ...errors, date: '' });
             handleChange({ ...formFields, date: e });
           }}
+          error={errors.date}
+          placeholder="Booking date"
+          value={formFields.date}
+          className={'p-4'}
           type={'date'}
           min={currentDate}
         />
         <TextArea
           id="comment"
+          onChange={e => handleChange({ ...formFields, comment: e })}
           placeholder="Comment"
           value={formFields.comment}
           className={'p-4'}
           rows={4}
-          onChange={e => handleChange({ ...formFields, comment: e })}
         />
         <Button type={'submit'} variant={'primary'}>
           Send

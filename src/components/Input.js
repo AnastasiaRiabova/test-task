@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import { useControlledState } from '../utils/hooks/useControledState';
 import { Label } from './Label';
 
@@ -14,12 +13,12 @@ export const Input = ({
   error,
   ...rest
 }) => {
-  // const [_value, setValue] = useControlledState(value, onChange);
-  //
-  // const handleChange = e => {
-  //   const { value: nextValue } = e.currentTarget;
-  //   setValue(nextValue);
-  // };
+  const [_value, setValue] = useControlledState(value, onChange);
+
+  const handleChange = e => {
+    const { value: nextValue } = e.currentTarget;
+    setValue(nextValue);
+  };
 
   return (
     <div className={'flex flex-col gap-2 mt-2 relative'}>
@@ -28,12 +27,12 @@ export const Input = ({
       <input
         type={type}
         placeholder={name}
-        onChange={e => onChange(e.currentTarget)}
+        onChange={handleChange}
         name={name}
         id={id}
         className={`p-2 rounded-[10px] bg-grey-lightGreyInput text-dark 
         ${icon ? 'pl-8' : ''} ${error ? 'border-red border' : ''} ${className}`}
-        value={value}
+        value={_value}
         {...rest}
       />
       {error && (

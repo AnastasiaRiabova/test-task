@@ -39,6 +39,21 @@ body {
 }
 
 .homeContainer {
-    background: url("assets/images/pexels-nubia-navarro-(nubikini)-386010.jpg") no-repeat center;
+    background: url("assets/images/pexels-alfonso-escalante-2832251.jpg") no-repeat center;
     background-size: cover;
+}
+
+.svg-red {
+    fill: #d84343;
+    & path {
+        stroke: #d84343;
+    }
+}
+
+
+.svg-grey {
+    fill: none;
+    & path {
+        stroke: #475467;
+    }
 }

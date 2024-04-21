@@ -4,10 +4,14 @@ import { star, starGrey } from '../assets/icons';
 export const ReviewItem = ({ name, rating, comment }) => {
   const renderRaring = rating => {
     return [...Array(5)].map((u, ind) => {
-      if (ind < rating) {
-        return <Icon key={ind} icon={star} width={'15px'} height={'15px'} />;
-      }
-      return <Icon key={ind} icon={starGrey} width={'15px'} height={'15px'} />;
+      return (
+        <Icon
+          key={ind}
+          icon={ind < rating ? star : starGrey}
+          width={'15px'}
+          height={'15px'}
+        />
+      );
     });
   };
   return (

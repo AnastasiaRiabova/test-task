@@ -1,9 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import '../index.css';
 import { Header } from './Header';
 import { Home } from '../pages/Home';
 import { Catalog } from '../pages/Catalog';
 import { Favorites } from '../pages/Favorites';
+import '../index.css';
 export const App = () => {
   return (
     <main>

@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Icon } from './Icon';
-
 import { map_pin, star, closeBtn } from '../assets/icons';
 import { Tabs } from './Tabs';
 

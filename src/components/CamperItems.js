@@ -96,7 +96,10 @@ export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
                     >
                       <Icon
                         icon={heart}
-                        fill={value.includes(camper._id) ? 'red' : 'none'}
+                        fill=""
+                        className={
+                          value.includes(camper._id) ? 'svg-red' : 'svg-grey'
+                        }
                       />
                     </span>
                   </div>

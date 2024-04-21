@@ -21,20 +21,15 @@ export const TextArea = ({
   };
 
   return (
-    <div className={classnames('flex flex-col gap-2 mt-2 relative')}>
+    <div className={'flex flex-col gap-2 mt-2 relative'}>
       {label && <Label id={id} label={label} />}
       {icon}
       <textarea
         rows={rows}
         name={name}
         id={id}
-        className={classnames(
-          'p-2 rounded-[10px] bg-grey-lightGrey text-dark',
-          {
-            ['pl-8']: icon,
-          },
-          className
-        )}
+        className={`p-2 rounded-[10px] bg-grey-lightGreyInput text-dark'
+          ${icon ? 'pl-8' : ''} ${className}`}
         value={_value}
         placeholder={name}
         onChange={handleChange}

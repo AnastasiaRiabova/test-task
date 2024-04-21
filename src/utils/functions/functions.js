@@ -20,7 +20,7 @@ export const calculateTags = object => {
   }));
 };
 
-export const validateIfValueHasLength = value => {
+export const validateStringLength = value => {
   if (value.length <= 0) {
     return {
       error: value.length <= 0,

@@ -8,7 +8,7 @@ export const Button = ({
 }) => {
   return (
     <button
-      className={`rounded-[20px] h-[40px]  w-[200px] p-1 ${className} ${
+      className={`rounded-[40px] px-[40px] py-[16px] ${className} ${
         variant === 'primary'
           ? 'text-white bg-red hover:bg-red-hover '
           : ' text-dark bg-white hover:border-red border-[1px]'

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {
   isDateNotInPast,
   validateEmail,
-  validateIfValueHasLength,
+  validateStringLength,
 } from '../utils/functions/functions';
 import { Button } from './Button';
 import { TextArea } from './TextArea';
@@ -29,7 +29,7 @@ export const Form = () => {
   };
 
   const validationData = {
-    name: validateIfValueHasLength,
+    name: validateStringLength,
     email: validateEmail,
     date: isDateNotInPast,
   };
@@ -95,7 +95,11 @@ export const Form = () => {
           className={'p-4'}
           rows={4}
         />
-        <Button type={'submit'} variant={'primary'}>
+        <Button
+          type={'submit'}
+          variant={'primary'}
+          className={'mr-auto w-[200px]'}
+        >
           Send
         </Button>
       </form>

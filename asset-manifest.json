@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test-task/static/css/main.6af4ffd5.css",
-    "main.js": "/test-task/static/js/main.f6a9be08.js",
+    "main.js": "/test-task/static/js/main.36a26464.js",
     "static/media/pexels-alfonso-escalante-2832251.jpg": "/test-task/static/media/pexels-alfonso-escalante-2832251.e55d875dc1f3f1381ae3.jpg",
     "static/media/Inter-Black.ttf": "/test-task/static/media/Inter-Black.83d81b169bedf85385f2.ttf",
     "static/media/Inter-Bold.ttf": "/test-task/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
@@ -40,10 +40,10 @@
     "static/media/kitchen.svg": "/test-task/static/media/kitchen.ad15febde36ef243dc46ef4c47c864da.svg",
     "static/media/close-btn.svg": "/test-task/static/media/close-btn.25dc3f46a342a188874fa545ced03ca2.svg",
     "main.6af4ffd5.css.map": "/test-task/static/css/main.6af4ffd5.css.map",
-    "main.f6a9be08.js.map": "/test-task/static/js/main.f6a9be08.js.map"
+    "main.36a26464.js.map": "/test-task/static/js/main.36a26464.js.map"
   },
   "entrypoints": [
     "static/css/main.6af4ffd5.css",
-    "static/js/main.f6a9be08.js"
+    "static/js/main.36a26464.js"
   ]
 }

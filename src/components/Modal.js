@@ -45,18 +45,24 @@ export const Modal = ({ isOpen, closeModal, data, calculateTags }) => {
                     </div>
                   </div>
                 </Dialog.Title>
-                <div className={'flex items-center gap-1 mb-2'}>
-                  <Icon icon={star} width={'15px'} height={'15px'} />
-                  <div>{data.rating}</div>
-                  <div className={'mr-2'}>({data.reviews.length} Reviews)</div>
-                  <Icon
-                    icon={map_pin}
-                    fill={'none'}
-                    width={'15px'}
-                    height={'15px'}
-                  />
-                  <span>{data.price}</span>
-                  <div>{data.location}</div>
+                <div>
+                  <div className={'flex items-center gap-1'}>
+                    <Icon icon={star} width={'15px'} height={'15px'} />
+                    <div>{data.rating}</div>
+                    <div className={'mr-2'}>
+                      ({data.reviews.length} Reviews)
+                    </div>
+                    <Icon
+                      icon={map_pin}
+                      fill={'none'}
+                      width={'15px'}
+                      height={'15px'}
+                    />
+                    <div>{data.location}</div>
+                  </div>
+                  <div className="font-bold my-4">
+                    {'€' + data.price.toFixed(2)}
+                  </div>
                 </div>
                 <div className="h-[80vh] overflow-auto pr-2">
                   <div className="text-sm text-grey-text flex flex-col gap-3">

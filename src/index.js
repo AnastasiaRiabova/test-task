@@ -9,7 +9,7 @@ import './index.css';
 const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/test-task">
+    <BrowserRouter basename="test-task">
       <Provider store={store}>
         <App />
       </Provider>

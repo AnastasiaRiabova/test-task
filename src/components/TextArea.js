@@ -1,5 +1,4 @@
 import { useControlledState } from '../utils/hooks/useControledState';
-import classnames from 'classnames';
 import { Label } from './Label';
 
 export const TextArea = ({

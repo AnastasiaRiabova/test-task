@@ -43,7 +43,7 @@ export const fullObjectProperties = {
 };
 
 export const typeMap = {
-  ['fully integrated']: 'fullyIntegrated',
+  'fully integrated': 'fullyIntegrated',
   van: 'panelTruck',
   alcove: 'alcove',
 };
@@ -55,7 +55,7 @@ export const filterMap = {
 
 export const typeMapFilter = {
   Van: <Icon icon={van} fill="none" />,
-  ['Fully Integrated']: <Icon icon={fully_integrated} fill="none" />,
+  'Fully Integrated': <Icon icon={fully_integrated} fill="none" />,
   Alcove: <Icon icon={alcove} fill="none" />,
 };
 

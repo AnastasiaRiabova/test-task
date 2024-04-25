@@ -25,7 +25,7 @@ export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
   }, [filters]);
   const filteredCampers = useMemo(() => {
     return isFiltered ? filterCampers(campers, filters) : campers;
-  }, [filters, campers]);
+  }, [filters, campers, isFiltered]);
 
   const showCampers = useMemo(() => {
     return filteredCampers.slice(0, show);

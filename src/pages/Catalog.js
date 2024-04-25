@@ -32,7 +32,7 @@ export const Catalog = () => {
     if (ref.current) {
       ref.current?.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }, [filters]);
+  }, [filters, setValue, searchParams]);
   const handleSubmit = key => {
     const params = new URLSearchParams(searchParams);
     if (Array.isArray(key)) {

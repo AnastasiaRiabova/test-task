@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Header } from './Header';
 import { Home } from '../pages/Home';
 import { Catalog } from '../pages/Catalog';

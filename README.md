@@ -21,17 +21,17 @@ The project utilizes the following technologies:
 
 ## Installation
 
-1. Clone the repository:
+- Clone the repository:
 
 git clone (https://github.com/AnastasiaRiabova/test-task/)
 
-2. npm install
+- npm install
 
 ## Usage
 
 To run the application, execute the following command:
 
-3. npm start
+- npm start
 
 This will start the application in development mode on your local server. You can then open the application in your browser at http://localhost:3000.
 

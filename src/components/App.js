@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Header } from './Header';
 import { Home } from '../pages/Home';
 import { Catalog } from '../pages/Catalog';
@@ -8,12 +8,12 @@ export const App = () => {
   return (
     <main>
       <Header />
-      <div className={'baseContainer'}>
+      <div className="baseContainer">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="catalog" element={<Catalog />} />
           <Route path="favorites" element={<Favorites />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>
       </div>
     </main>

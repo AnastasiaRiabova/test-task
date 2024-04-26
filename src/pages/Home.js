@@ -5,7 +5,7 @@ export const Home = () => {
   const navigate = useNavigate();
   return (
     <section className={'homeContainer bg-center bg-cover h-full w-full'}>
-      <div className={'bg-[#ffffff75] h-full'}>
+      <div>
         <div className={'flex flex-col gap-32 items-start p-8'}>
           <div className={'font-bold text-red text-7xl pt-48 leading-normal'}>
             <h1>

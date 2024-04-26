@@ -29,7 +29,7 @@ export const Header = () => {
       }`}
     >
       <nav>
-        <ul className={'flex items-center gap-3'}>
+        <ul className={'flex items-center gap-6'}>
           <li>
             <div
               className={'p-1 border rounded-full border-red cursor-pointer'}

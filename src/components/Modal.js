@@ -48,9 +48,15 @@ export const Modal = ({ isOpen, closeModal, data, calculateTags }) => {
                 <div>
                   <div className={'flex items-center gap-1'}>
                     <Icon icon={star} width={'15px'} height={'15px'} />
-                    <div>{data.rating}</div>
-                    <div className={'mr-2'}>
-                      ({data.reviews.length} Reviews)
+                    <div
+                      className={
+                        'flex items-center gap-1 border-b border-grey-text'
+                      }
+                    >
+                      <div>{data.rating}</div>
+                      <div className={'mr-2'}>
+                        ({data.reviews.length} Reviews)
+                      </div>
                     </div>
                     <Icon
                       icon={map_pin}

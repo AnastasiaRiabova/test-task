@@ -106,9 +106,15 @@ export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
                 </div>
                 <div className={'flex items-center gap-1'}>
                   <Icon icon={star} width={'15px'} height={'15px'} />
-                  <div>{camper.rating}</div>
-                  <div className={'mr-2'}>
-                    ({camper.reviews.length} Reviews)
+                  <div
+                    className={
+                      'flex items-center gap-1 border-b border-grey-text'
+                    }
+                  >
+                    <div>{camper.rating}</div>
+                    <div className={'mr-2'}>
+                      ({camper.reviews.length} Reviews)
+                    </div>
                   </div>
                   <Icon
                     icon={map_pin}
@@ -116,6 +122,7 @@ export const CamperItems = ({ campers = [], isLoading, emptyComponent }) => {
                     width={'15px'}
                     height={'15px'}
                   />
+
                   <div>{camper.location}</div>
                 </div>
                 <div className={'text-zinc-500 truncate'}>
